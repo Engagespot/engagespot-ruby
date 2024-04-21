@@ -35,10 +35,17 @@ require 'engagespot'
 engagespot = Engagespot.new(api_key: 'your_api_key', api_secret: 'your_api_secret')
 
 # Send a notification
-result = engagespot.send_notification('Rose accepted your friend request', 'unique-user-id')
+send_request = {
+    notification:{
+        title: "Test notification from Ruby",
+    },
+    recipients:['unique-user-id']
+}
+
+response = engagespot.send(send_request)
 
 # Output the result
-puts result
+puts response
 ```
 
 ### 2. `create_or_update_user` Function
