@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
     spec.name          = "engagespot"
-    spec.version       = "0.0.3"
+    spec.version       = "1.0.1"
     spec.authors       = ["Anand (coded by ChatGPT)"]
     spec.email         = ["anand@engagespot.co"]
     spec.summary       = "Engagespot REST API client for Ruby"
