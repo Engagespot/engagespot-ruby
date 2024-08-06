@@ -26,7 +26,8 @@ gem install engagespot
 
 ### 1. `send_notification` Function
 
-The `send_notification` function allows you to send notifications to specific recipients. Here's how you can use it:
+The easiest way to send notifications in Engagespot is by creating message workflows in [Engagespot console](https://console.engagespot.co) and trigger it using this Python library.
+
 
 ```ruby
 require 'engagespot'
@@ -37,9 +38,13 @@ engagespot = Engagespot.new(api_key: 'your_api_key', api_secret: 'your_api_secre
 # Send a notification
 send_request = {
     notification:{
-        title: "Test notification from Ruby",
+        workflow: {
+            identifier: "workflow-identifier"
+        },
     },
-    recipients:['unique-user-id']
+    sendTo:{
+        recipients: ['user-identifier']
+    }
 }
 
 response = engagespot.send(send_request)
@@ -64,6 +69,9 @@ result = engagespot.create_or_update_user('user_identifier', profile: { name: 'J
 # Output the result
 puts result
 ```
+
+# Detailed Guide
+Read [Engagespot docs](https://docs.engagespot.co/docs/introduction/quick-start) to learn how to build and send notification workflows.
 
 ## Need Help?
 
